@@ -3,29 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Binary Tree Postorder Traversal | 码农求职记</title>
+  <title>Binary Tree Preorder Traversal | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a binary tree, return the postorder traversal of its nodes’ values.
-For example:Given binary tree {1,#,2,3}, return [3,2,1].
-Note: Recursive solution is trivial, could you do it iteratively?
-1
-2">
+  <meta name="description" content="Given a binary tree, return the preorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},   1    \     2    /   3return [1,2,3].
+Note: Recursive solution is trivial, could you">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Binary Tree Postorder Traversal">
-<meta property="og:url" content="http://yoursite.com/2014/09/12/postOrder/">
+<meta property="og:title" content="Binary Tree Preorder Traversal">
+<meta property="og:url" content="http://yoursite.com/2014/09/12/preOrder/">
 <meta property="og:site_name" content="码农求职记">
-<meta property="og:description" content="Given a binary tree, return the postorder traversal of its nodes’ values.
-For example:Given binary tree {1,#,2,3}, return [3,2,1].
-Note: Recursive solution is trivial, could you do it iteratively?
-1
-2">
+<meta property="og:description" content="Given a binary tree, return the preorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},   1    \     2    /   3return [1,2,3].
+Note: Recursive solution is trivial, could you">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Binary Tree Postorder Traversal">
-<meta name="twitter:description" content="Given a binary tree, return the postorder traversal of its nodes’ values.
-For example:Given binary tree {1,#,2,3}, return [3,2,1].
-Note: Recursive solution is trivial, could you do it iteratively?
-1
-2">
+<meta name="twitter:title" content="Binary Tree Preorder Traversal">
+<meta name="twitter:description" content="Given a binary tree, return the preorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},   1    \     2    /   3return [1,2,3].
+Note: Recursive solution is trivial, could you">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -122,11 +116,11 @@ Note: Recursive solution is trivial, could you do it iteratively?
 		</header>				
 	</div>
 </nav>
-      <article id="post-postOrder" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-preOrder" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/09/12/postOrder/" class="article-date">
-  	<time datetime="2014-09-12T11:06:24.000Z" itemprop="datePublished">9月 12 2014</time>
+      <a href="/2014/09/12/preOrder/" class="article-date">
+  	<time datetime="2014-09-12T11:18:13.000Z" itemprop="datePublished">9月 12 2014</time>
 </a>
       
       
@@ -140,7 +134,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
         
   
     <h1 class="article-title" itemprop="name">
-      Binary Tree Postorder Traversal
+      Binary Tree Preorder Traversal
     </h1>
   
 
@@ -148,8 +142,8 @@ Note: Recursive solution is trivial, could you do it iteratively?
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
-<p>For example:<br>Given binary tree {1,#,2,3}, return [3,2,1].</p>
+        <p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree {1,#,2,3},<br>   1<br>    \<br>     2<br>    /<br>   3<br>return [1,2,3].</p>
 <p>Note: Recursive solution is trivial, could you do it iteratively?</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
@@ -168,39 +162,24 @@ Note: Recursive solution is trivial, could you do it iteratively?
 15
 16
 17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="code"><pre><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> postorderTraversal(TreeNode *root) {
+</pre></td><td class="code"><pre><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> preorderTraversal(TreeNode *root) {
     <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>res;
+    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span>st;
     TreeNode* p = root;
-    <span class="keyword">if</span>(root == NULL) <span class="keyword">return</span> res; 
-
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span> st;
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span>output;
-    st.push(p); 
-
+    <span class="keyword">if</span>(p != NULL) st.push(p);
+       
     <span class="keyword">while</span>(!st.empty()){
         p = st.top();
         st.pop();
-        output.push(p);
-        <span class="keyword">if</span>(p-&gt;left != NULL) st.push(p-&gt;left);
+        res.push_back(p-&gt;val);
         <span class="keyword">if</span>(p-&gt;right != NULL) st.push(p-&gt;right);
-    }
-    
-    <span class="keyword">while</span>(!output.empty()){
-        res.push_back(output.top()-&gt;val);
-        output.pop();
+        <span class="keyword">if</span>(p-&gt;left != NULL) st.push(p-&gt;left);
     }
     
     <span class="keyword">return</span> res;
+    
 }
 </pre></td></tr></table></figure>
-
       
     </div>
     <footer class="article-footer">
@@ -212,15 +191,11 @@ Note: Recursive solution is trivial, could you do it iteratively?
     
 <nav id="article-nav">
   
-    <a href="/2014/09/12/preOrder/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Binary Tree Preorder Traversal
-        
-      </div>
-    </a>
   
+    <a href="/2014/09/12/postOrder/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Binary Tree Postorder Traversal</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -247,7 +222,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="postOrder" data-title="Binary Tree Postorder Traversal" data-url="http://yoursite.com/2014/09/12/postOrder/"></div>
+	<div class="ds-thread" data-thread-key="preOrder" data-title="Binary Tree Preorder Traversal" data-url="http://yoursite.com/2014/09/12/preOrder/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
