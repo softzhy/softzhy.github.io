@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>码农求职记</title>
+  <title>Tag: 二叉树 | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="码农求职记">
-<meta property="og:url" content="http://yoursite.com/">
+<meta property="og:url" content="http://yoursite.com/tags/二叉树/">
 <meta property="og:site_name" content="码农求职记">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -112,101 +112,43 @@
 </nav>
       
   
-    <article id="post-postOrder" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2014/09/12/postOrder/" class="article-date">
-  	<time datetime="2014-09-12T11:06:24.000Z" itemprop="datePublished">9月 12 2014</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2014" class="archive-year">2014</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2014/09/12/postOrder/" class="archive-article-date">
+  	<time datetime="2014-09-12T11:06:24.000Z" itemprop="datePublished">9月 12</time>
 </a>
-      
-      
+	      	<br>
+	      	
+	    	
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	</div>
+    	
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/12/postOrder/">Binary Tree Postorder Traversal</a>
+      <a class="archive-article-title" href="/2014/09/12/postOrder/">Binary Tree Postorder Traversal</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
-<p>For example:<br>Given binary tree {1,#,2,3}, return [3,2,1].</p>
-<p>Note: Recursive solution is trivial, could you do it iteratively?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="code"><pre><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> postorderTraversal(TreeNode *root) {
-    <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>res;
-    TreeNode* p = root;
-    <span class="keyword">if</span>(root == NULL) <span class="keyword">return</span> res; 
-
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span> st;
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span>output;
-    st.push(p); 
-
-    <span class="keyword">while</span>(!st.empty()){
-        p = st.top();
-        st.pop();
-        output.push(p);
-        <span class="keyword">if</span>(p-&gt;left != NULL) st.push(p-&gt;left);
-        <span class="keyword">if</span>(p-&gt;right != NULL) st.push(p-&gt;right);
-    }
-    
-    <span class="keyword">while</span>(!output.empty()){
-        res.push_back(output.top()-&gt;val);
-        output.pop();
-    }
-    
-    <span class="keyword">return</span> res;
-}
-</pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
   
+  
+    </div></section>
   
 
       <footer id="footer">
