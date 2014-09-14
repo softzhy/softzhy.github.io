@@ -151,21 +151,14 @@ For example:Given the below binary tree and sum = 2">
 <p>For example:<br>Given the below binary tree and sum = 22,</p>
 <p>[5,4,8,11,#,13,4,7,2,#,#,#,1]</p>
 <p>return true, as there exist a root-to-leaf path 5-&gt;4-&gt;11-&gt;2 which sum is 22</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre>bool hasPathSum(TreeNode <span class="subst">*</span>root, int <span class="keyword">sum</span>) {
+<figure class="highlight"><pre>bool hasPathSum(TreeNode <span class="subst">*</span>root, int <span class="keyword">sum</span>) {
     <span class="keyword">if</span>(root <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;
     
     <span class="keyword">if</span>(<span class="subst">!</span>root<span class="subst">-&gt;</span>left <span class="subst">&&</span> <span class="subst">!</span>root<span class="subst">-&gt;</span>right) <span class="keyword">return</span> <span class="keyword">sum</span> <span class="subst">==</span> root<span class="subst">-&gt;</span>val;
     
     <span class="keyword">return</span> hasPathSum(root<span class="subst">-&gt;</span>left,<span class="keyword">sum</span><span class="attribute">-root</span><span class="subst">-&gt;</span>val) <span class="subst">||</span> hasPathSum(root<span class="subst">-&gt;</span>right,<span class="keyword">sum</span><span class="attribute">-root</span><span class="subst">-&gt;</span>val);
 }
-</pre></td></tr></table></figure>
+</pre></figure>
       
     </div>
     <footer class="article-footer">

@@ -6,152 +6,26 @@
   <title>Sort List | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Sort a linked list in O(n log n) time using constant space complexity.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46">
+ListNode* sortList(ListNode *head) {
+    if(head == NULL || head-&gt;next == NULL) return head;
+    
+    ListNode* prev = NULL, *">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sort List">
 <meta property="og:url" content="http://yoursite.com/2014/09/14/sortlist2/">
 <meta property="og:site_name" content="码农求职记">
 <meta property="og:description" content="Sort a linked list in O(n log n) time using constant space complexity.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46">
+ListNode* sortList(ListNode *head) {
+    if(head == NULL || head-&gt;next == NULL) return head;
+    
+    ListNode* prev = NULL, *">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort List">
 <meta name="twitter:description" content="Sort a linked list in O(n log n) time using constant space complexity.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46">
+ListNode* sortList(ListNode *head) {
+    if(head == NULL || head-&gt;next == NULL) return head;
+    
+    ListNode* prev = NULL, *">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -283,60 +157,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Sort a linked list in O(n log n) time using constant space complexity.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-</pre></td><td class="code"><pre>ListNode* sortList(ListNode <span class="variable">*head</span>) {
+<figure class="highlight"><pre>ListNode* sortList(ListNode <span class="variable">*head</span>) {
     <span class="keyword">if</span>(head == NULL || head-&gt;<span class="keyword">next</span> == NULL) <span class="keyword">return</span> head;
     
     ListNode* prev = NULL, <span class="variable">*slow</span> = head, <span class="variable">*fast</span> = head;
@@ -389,7 +210,7 @@ ListNode* merge(ListNode* left, ListNode* right){
     
     <span class="keyword">return</span> ret;
 }
-</pre></td></tr></table></figure>
+</pre></figure>
       
     </div>
     <footer class="article-footer">

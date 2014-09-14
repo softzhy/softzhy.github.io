@@ -153,18 +153,7 @@ Here, we will use the integers 0,">
 <p>click to show follow up.</p>
 <p>Follow up:<br>A rather straight forward solution is a two-pass algorithm using counting sort.<br>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</p>
 <p>Could you come up with an one-pass algorithm using only constant space?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre><span class="keyword">void</span> sortColors(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
+<figure class="highlight"><pre><span class="keyword">void</span> sortColors(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
     <span class="keyword">int</span> <span class="keyword">count</span>[<span class="number">3</span>] = {<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>};
     
     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) <span class="keyword">count</span>[A[i]]++;
@@ -175,7 +164,7 @@ Here, we will use the integers 0,">
             A[<span class="keyword">index</span>++] = i;
     }
 }
-</pre></td></tr></table></figure>
+</pre></figure>
       
     </div>
     <footer class="article-footer">

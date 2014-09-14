@@ -6,47 +6,32 @@
   <title>Populating Next Right Pointers in Each Node | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Given a binary tree
-1
-2
-3
-4
-5
 struct TreeLinkNode {
   TreeLinkNode *left;
   TreeLinkNode *right;
   TreeLinkNode *next;
 }
-Populate each next pointer to point to its next right node. If there is no next">
+Populate each next pointer to point to its next right node. If there is no next right nod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Populating Next Right Pointers in Each Node">
 <meta property="og:url" content="http://yoursite.com/2014/09/14/populateNode/">
 <meta property="og:site_name" content="码农求职记">
 <meta property="og:description" content="Given a binary tree
-1
-2
-3
-4
-5
 struct TreeLinkNode {
   TreeLinkNode *left;
   TreeLinkNode *right;
   TreeLinkNode *next;
 }
-Populate each next pointer to point to its next right node. If there is no next">
+Populate each next pointer to point to its next right node. If there is no next right nod">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Populating Next Right Pointers in Each Node">
 <meta name="twitter:description" content="Given a binary tree
-1
-2
-3
-4
-5
 struct TreeLinkNode {
   TreeLinkNode *left;
   TreeLinkNode *right;
   TreeLinkNode *next;
 }
-Populate each next pointer to point to its next right node. If there is no next">
+Populate each next pointer to point to its next right node. If there is no next right nod">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -178,39 +163,12 @@ Populate each next pointer to point to its next right node. If there is no next"
     <div class="article-entry" itemprop="articleBody">
       
         <p>Given a binary tree</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>struct TreeLinkNode {
+<figure class="highlight"><pre>struct TreeLinkNode {
   TreeLinkNode <span class="variable">*left</span>;
   TreeLinkNode <span class="variable">*right</span>;
   TreeLinkNode <span class="variable">*next</span>;
 }
-</pre></td></tr></table></figure><br>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.<br><br>Initially, all next pointers are set to NULL.<br><br>Note:<br><br>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL<br><br><figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-</pre></td><td class="code"><pre><span class="literal">void</span> connect(TreeLinkNode <span class="subst">*</span>root) {
+</pre></figure><br>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.<br><br>Initially, all next pointers are set to NULL.<br><br>Note:<br><br>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL<br><br><figure class="highlight"><pre><span class="literal">void</span> connect(TreeLinkNode <span class="subst">*</span>root) {
     <span class="keyword">while</span>(root){
         TreeLinkNode<span class="subst">*</span> prev <span class="subst">=</span> <span class="built_in">NULL</span>;<span class="comment">//previous node of the same level</span>
         TreeLinkNode<span class="subst">*</span> nxt <span class="subst">=</span> <span class="built_in">NULL</span>;<span class="comment">//first node of next level</span>
@@ -232,7 +190,7 @@ Populate each next pointer to point to its next right node. If there is no next"
         root <span class="subst">=</span> nxt;
     }
 }
-</pre></td></tr></table></figure>
+</pre></figure>
       
     </div>
     <footer class="article-footer">

@@ -149,17 +149,7 @@ Note:You may assume that A has enough space">
       
         <p>Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My Submissions<br>Given two sorted integer arrays A and B, merge B into A as one sorted array.</p>
 <p>Note:<br>You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are m and n respectively.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre>void merge(<span class="built_in">int</span> A[], <span class="built_in">int</span> m, <span class="built_in">int</span> B[], <span class="built_in">int</span> n) {
+<figure class="highlight"><pre>void merge(<span class="built_in">int</span> A[], <span class="built_in">int</span> m, <span class="built_in">int</span> B[], <span class="built_in">int</span> n) {
     <span class="built_in">int</span> <span class="built_in">len</span> = m+n-<span class="number">1</span>;
     <span class="built_in">int</span> ia = m-<span class="number">1</span>, ib = n-<span class="number">1</span>;
     
@@ -169,7 +159,7 @@ Note:You may assume that A has enough space">
     
     <span class="keyword">while</span>(ib &gt;= <span class="number">0</span>) A[<span class="built_in">len</span>--] = B[ib--];
 }
-</pre></td></tr></table></figure>
+</pre></figure>
 
       
     </div>

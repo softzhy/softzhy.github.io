@@ -153,18 +153,7 @@ The left subtree of a node contains only nodes with keys less than the node’s 
         <p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
 <p>Assume a BST is defined as follows:</p>
 <p>The left subtree of a node contains only nodes with keys less than the node’s key.<br>The right subtree of a node contains only nodes with keys greater than the node’s key.<br>Both the left and right subtrees must also be binary search trees.<br>confused what “{1,#,2,3}” means? &gt; read more on how binary tree is serialized on OJ.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre>bool isValidBST(TreeNode<span class="subst">*</span> root, int lower, int upper){
+<figure class="highlight"><pre>bool isValidBST(TreeNode<span class="subst">*</span> root, int lower, int upper){
     <span class="keyword">if</span>(root <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;
     
     <span class="keyword">return</span> root<span class="subst">-&gt;</span>val <span class="subst">&lt;</span> upper <span class="subst">&&</span> root<span class="subst">-&gt;</span>val <span class="subst">&gt;</span> lower
@@ -175,7 +164,7 @@ The left subtree of a node contains only nodes with keys less than the node’s 
 bool isValidBST(TreeNode <span class="subst">*</span>root) {
    <span class="keyword">return</span> isValidBST(root,INT_MIN,INT_MAX);     
 }
-</pre></td></tr></table></figure>
+</pre></figure>
 
 
       
