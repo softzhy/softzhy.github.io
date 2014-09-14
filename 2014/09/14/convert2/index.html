@@ -3,23 +3,116 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Unique Binary Search Trees | 码农求职记</title>
+  <title>Convert Sorted List to Binary Search Tree | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?
-For example,Given n = 3, there are a total of 5 unique BST’s.
-[1,#,3,2], [3,2,#,1], [3,1,#,#,2], [2,1,3], [1,#,">
+  <meta name="description" content="Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unique Binary Search Trees">
-<meta property="og:url" content="http://yoursite.com/2014/09/14/uniqueBinary/">
+<meta property="og:title" content="Convert Sorted List to Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2014/09/14/convert2/">
 <meta property="og:site_name" content="码农求职记">
-<meta property="og:description" content="Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?
-For example,Given n = 3, there are a total of 5 unique BST’s.
-[1,#,3,2], [3,2,#,1], [3,1,#,#,2], [2,1,3], [1,#,">
+<meta property="og:description" content="Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unique Binary Search Trees">
-<meta name="twitter:description" content="Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?
-For example,Given n = 3, there are a total of 5 unique BST’s.
-[1,#,3,2], [3,2,#,1], [3,1,#,#,2], [2,1,3], [1,#,">
+<meta name="twitter:title" content="Convert Sorted List to Binary Search Tree">
+<meta name="twitter:description" content="Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -124,11 +217,11 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
 		</header>				
 	</div>
 </nav>
-      <article id="post-uniqueBinary" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-convert2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/09/14/uniqueBinary/" class="article-date">
-  	<time datetime="2014-09-14T14:15:24.000Z" itemprop="datePublished">9月 14 2014</time>
+      <a href="/2014/09/14/convert2/" class="article-date">
+  	<time datetime="2014-09-14T14:25:36.000Z" itemprop="datePublished">9月 14 2014</time>
 </a>
       
       
@@ -142,7 +235,7 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
         
   
     <h1 class="article-title" itemprop="name">
-      Unique Binary Search Trees
+      Convert Sorted List to Binary Search Tree
     </h1>
   
 
@@ -150,9 +243,7 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?</p>
-<p>For example,<br>Given n = 3, there are a total of 5 unique BST’s.</p>
-<p>[1,#,3,2], [3,2,#,1], [3,1,#,#,2], [2,1,3], [1,#,2,#,3]</p>
+        <p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -164,16 +255,86 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
 9
 10
 11
-</pre></td><td class="code"><pre><span class="keyword">int</span> numTrees(<span class="keyword">int</span> n) {
-    <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>dp(n+<span class="number">1</span>,<span class="number">0</span>);
-    dp[<span class="number">0</span>] = <span class="number">1</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt;= n; i++){
-        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;i; k++){
-            dp[i] += dp[k] * dp[i-k-<span class="number">1</span>];
-        }
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="code"><pre>TreeNode <span class="subst">*</span>sortedListToBST(ListNode <span class="subst">*</span>head) {
+   <span class="keyword">if</span>(head <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="built_in">NULL</span>;
+   int n <span class="subst">=</span> getListLen(head);
+   <span class="keyword">return</span> sortedListToBST(head,<span class="number">0</span>,n<span class="subst">-</span><span class="number">1</span>);
+}
+
+TreeNode<span class="subst">*</span> sortedListToBST1(ListNode<span class="subst">*</span> head, int l, int r){
+    <span class="comment">//自顶而下，复杂度O(nlg(n))</span>
+    <span class="keyword">if</span>(l<span class="subst">&gt;</span>r) <span class="keyword">return</span> <span class="built_in">NULL</span>;
+    
+    int mid <span class="subst">=</span> l <span class="subst">+</span> (r<span class="attribute">-l</span>)/<span class="number">2</span>;
+    ListNode<span class="subst">*</span> pt <span class="subst">=</span> head;
+    
+    for(int i<span class="subst">=</span>l; i<span class="subst">&lt;</span>mid; i<span class="subst">++</span>) pt <span class="subst">=</span> pt<span class="subst">-&gt;</span>next;
+    
+    TreeNode<span class="subst">*</span> root <span class="subst">=</span> <span class="literal">new</span> TreeNode(pt<span class="subst">-&gt;</span>val);
+    root<span class="subst">-&gt;</span>left <span class="subst">=</span> sortedListToBST(head,l,mid<span class="subst">-</span><span class="number">1</span>);
+    root<span class="subst">-&gt;</span>right <span class="subst">=</span> sortedListToBST(pt<span class="subst">-&gt;</span>next,mid<span class="subst">+</span><span class="number">1</span>,r);
+    
+    <span class="keyword">return</span> root;
+}
+
+TreeNode<span class="subst">*</span> sortedListToBST2(ListNode<span class="subst">*</span> <span class="subst">&</span>head, int l, int r){<span class="comment">//&head,引用精髓</span>
+    <span class="keyword">if</span>(l<span class="subst">&gt;</span>r) <span class="keyword">return</span> <span class="built_in">NULL</span>;
+    
+    <span class="comment">//Apprach 2: 自底而上,复杂度O(n)</span>
+    int mid <span class="subst">=</span> l <span class="subst">+</span> (r<span class="attribute">-l</span>)/<span class="number">2</span>;
+    TreeNode<span class="subst">*</span> left <span class="subst">=</span> sortedListToBST(head,l,mid<span class="subst">-</span><span class="number">1</span>);<span class="comment">//运行完，head指向中间位</span>
+    TreeNode<span class="subst">*</span> root <span class="subst">=</span> <span class="literal">new</span> TreeNode(head<span class="subst">-&gt;</span>val);
+    root<span class="subst">-&gt;</span>left <span class="subst">=</span> left;
+    head <span class="subst">=</span> head<span class="subst">-&gt;</span>next;<span class="comment">//必须要有</span>
+    root<span class="subst">-&gt;</span>right <span class="subst">=</span> sortedListToBST(head,mid<span class="subst">+</span><span class="number">1</span>,r);
+    
+    <span class="keyword">return</span> root;
+}
+
+int getListLen(ListNode<span class="subst">*</span> head){
+    <span class="keyword">if</span>(head <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;
+    int len <span class="subst">=</span> <span class="number">0</span>;
+    <span class="keyword">while</span>(head){
+        head <span class="subst">=</span> head<span class="subst">-&gt;</span>next;
+        len<span class="subst">++</span>;
     }
     
-    <span class="keyword">return</span> dp[n];
+    <span class="keyword">return</span> len;
 }
 </pre></td></tr></table></figure>
       
@@ -187,18 +348,18 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
     
 <nav id="article-nav">
   
-    <a href="/2014/09/14/unique2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/14/minimumdepth/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Unique Binary Search Trees II
+          Minimum Depth of Binary Tree
         
       </div>
     </a>
   
   
-    <a href="/2014/09/14/constructPI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Construct Binary Tree from Preorder and Inorder Traversal</div>
+    <a href="/2014/09/14/convert1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Convert Sorted Array to Binary Search Tree</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -227,7 +388,7 @@ For example,Given n = 3, there are a total of 5 unique BST’s.
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="uniqueBinary" data-title="Unique Binary Search Trees" data-url="http://yoursite.com/2014/09/14/uniqueBinary/"></div>
+	<div class="ds-thread" data-thread-key="convert2" data-title="Convert Sorted List to Binary Search Tree" data-url="http://yoursite.com/2014/09/14/convert2/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
