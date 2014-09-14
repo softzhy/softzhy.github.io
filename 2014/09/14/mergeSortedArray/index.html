@@ -3,29 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Binary Tree Inorder Traversal | 码农求职记</title>
+  <title>Merge Sorted Array | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a binary Tree, return the inorder traversal of its nodes’ values.For example: Given binary tree {1,#,2,3}, return [1,3,2].Note: Recursive solution is trival, could you do it iteratively?
-1
-2
-3
-4">
+  <meta name="description" content="Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My SubmissionsGiven two sorted integer arrays A and B, merge B into A as one sorted array.
+Note:You may assume that A has enough space">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Binary Tree Inorder Traversal">
-<meta property="og:url" content="http://yoursite.com/2014/09/12/inOrder/">
+<meta property="og:title" content="Merge Sorted Array">
+<meta property="og:url" content="http://yoursite.com/2014/09/14/mergeSortedArray/">
 <meta property="og:site_name" content="码农求职记">
-<meta property="og:description" content="Given a binary Tree, return the inorder traversal of its nodes’ values.For example: Given binary tree {1,#,2,3}, return [1,3,2].Note: Recursive solution is trival, could you do it iteratively?
-1
-2
-3
-4">
+<meta property="og:description" content="Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My SubmissionsGiven two sorted integer arrays A and B, merge B into A as one sorted array.
+Note:You may assume that A has enough space">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Binary Tree Inorder Traversal">
-<meta name="twitter:description" content="Given a binary Tree, return the inorder traversal of its nodes’ values.For example: Given binary tree {1,#,2,3}, return [1,3,2].Note: Recursive solution is trival, could you do it iteratively?
-1
-2
-3
-4">
+<meta name="twitter:title" content="Merge Sorted Array">
+<meta name="twitter:description" content="Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My SubmissionsGiven two sorted integer arrays A and B, merge B into A as one sorted array.
+Note:You may assume that A has enough space">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -130,15 +121,15 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-inOrder" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-mergeSortedArray" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/09/12/inOrder/" class="article-date">
-  	<time datetime="2014-09-12T11:23:56.000Z" itemprop="datePublished">9月 12 2014</time>
+      <a href="/2014/09/14/mergeSortedArray/" class="article-date">
+  	<time datetime="2014-09-14T13:57:30.000Z" itemprop="datePublished">9月 14 2014</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
 
     </div>
   
@@ -148,7 +139,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Binary Tree Inorder Traversal
+      Merge Sorted Array
     </h1>
   
 
@@ -156,7 +147,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a binary Tree, return the inorder traversal of its nodes’ values.<br>For example: Given binary tree {1,#,2,3}, return [1,3,2].<br>Note: Recursive solution is trival, could you do it iteratively?</p>
+        <p>Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My Submissions<br>Given two sorted integer arrays A and B, merge B into A as one sorted array.</p>
+<p>Note:<br>You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are m and n respectively.</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -167,35 +159,15 @@
 8
 9
 10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="code"><pre><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> inOrderTraversal(TreeNode* root){
-    <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>res;
-    <span class="stl_container"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt;</span>st;
-    TreeNode* p = root;
-
-    <span class="keyword">while</span>(!st.empty() || p != NULL){
-        <span class="keyword">if</span>(p != NULL){
-            st.push(p);
-            p = p-&gt;left;
-        }
-        <span class="keyword">else</span>{
-            p = st.top();
-            st.pop();
-            res.push_back(p-&gt;val);
-            p = p-&gt;right;
-        }
+</pre></td><td class="code"><pre>void merge(<span class="built_in">int</span> A[], <span class="built_in">int</span> m, <span class="built_in">int</span> B[], <span class="built_in">int</span> n) {
+    <span class="built_in">int</span> <span class="built_in">len</span> = m+n-<span class="number">1</span>;
+    <span class="built_in">int</span> ia = m-<span class="number">1</span>, ib = n-<span class="number">1</span>;
+    
+    <span class="keyword">while</span>(ia &gt;=<span class="number">0</span> && ib &gt;= <span class="number">0</span>){
+        A[<span class="built_in">len</span>--] = A[ia] &gt; B[ib] ? A[ia--] : B[ib--];
     }
     
-    <span class="keyword">return</span> res;
+    <span class="keyword">while</span>(ib &gt;= <span class="number">0</span>) A[<span class="built_in">len</span>--] = B[ib--];
 }
 </pre></td></tr></table></figure>
 
@@ -210,18 +182,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/14/validParentese/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/14/mergetwosortedlists/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Valid Parentheses
+          Merge Two Sorted Lists
         
       </div>
     </a>
   
   
-    <a href="/2014/09/12/preOrder/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Binary Tree Preorder Traversal</div>
+    <a href="/2014/09/14/validParentese/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Valid Parentheses</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -250,7 +222,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="inOrder" data-title="Binary Tree Inorder Traversal" data-url="http://yoursite.com/2014/09/12/inOrder/"></div>
+	<div class="ds-thread" data-thread-key="mergeSortedArray" data-title="Merge Sorted Array" data-url="http://yoursite.com/2014/09/14/mergeSortedArray/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

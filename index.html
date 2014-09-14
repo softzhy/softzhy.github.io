@@ -120,6 +120,790 @@
 </nav>
       
   
+    <article id="post-sortcol" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/sortcol/" class="article-date">
+  	<time datetime="2014-09-14T14:03:23.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/sortcol/">Sort Colors</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p>Note:<br>You are not suppose to use the library’s sort function for this problem.</p>
+<p>click to show follow up.</p>
+<p>Follow up:<br>A rather straight forward solution is a two-pass algorithm using counting sort.<br>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</p>
+<p>Could you come up with an one-pass algorithm using only constant space?</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="keyword">void</span> sortColors(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
+    <span class="keyword">int</span> <span class="keyword">count</span>[<span class="number">3</span>] = {<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>};
+    
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) <span class="keyword">count</span>[A[i]]++;
+    
+    <span class="keyword">int</span> <span class="keyword">index</span> = <span class="number">0</span>;
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++){
+        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="keyword">count</span>[i]; j++)
+            A[<span class="keyword">index</span>++] = i;
+    }
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-firstmissingpositive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/firstmissingpositive/" class="article-date">
+  	<time datetime="2014-09-14T14:02:30.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/firstmissingpositive/">First Missing Positive</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an unsorted integer array, find the first missing positive integer.</p>
+<p>For example,<br>Given [1,2,0] return 3,<br>and [3,4,-1,1] return 2.</p>
+<p>Your algorithm should run in O(n) time and uses constant space.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="comment">//符合要求的做法，需要好好研究下</span>
+<span class="keyword">int</span> firstMissingPositive(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
+    <span class="comment">//数组本身做哈希表</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++){
+        <span class="comment">//A[i]的值对应 i+1</span>
+        <span class="keyword">while</span>(A[i] != i+<span class="number">1</span>){<span class="comment">//while精髓</span>
+            <span class="keyword">if</span>(A[i] &lt;= <span class="number">0</span> || A[i] &gt; n || A[i] == A[A[i]-<span class="number">1</span>])
+                <span class="keyword">break</span>;
+            swap(A[i],A[A[i]-<span class="number">1</span>]);
+        }
+    } 
+    
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++){
+        <span class="keyword">if</span>(A[i] != i+<span class="number">1</span>) <span class="keyword">return</span> i+<span class="number">1</span>;
+    }
+    
+    <span class="keyword">return</span> n+<span class="number">1</span>;
+}
+
+<span class="comment">//数据结构set</span>
+<span class="keyword">int</span> firstMissingPositive(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
+    <span class="stl_container"><span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt;</span>st;
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++){
+        <span class="keyword">if</span>(A[i]&gt;<span class="number">0</span>) st.insert(A[i]);
+    }
+    
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt;= n+<span class="number">1</span>; i++){
+        <span class="keyword">if</span>(st.find(i) == st.end()) <span class="keyword">return</span> i;
+    }
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-sortlist2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/sortlist2/" class="article-date">
+  	<time datetime="2014-09-14T14:01:39.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/sortlist2/">Sort List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sort a linked list in O(n log n) time using constant space complexity.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre></td><td class="code"><pre>ListNode* sortList(ListNode <span class="variable">*head</span>) {
+    <span class="keyword">if</span>(head == NULL || head-&gt;<span class="keyword">next</span> == NULL) <span class="keyword">return</span> head;
+    
+    ListNode* prev = NULL, <span class="variable">*slow</span> = head, <span class="variable">*fast</span> = head;
+    
+    <span class="keyword">while</span>(fast && fast-&gt;<span class="keyword">next</span>){
+        prev = slow;
+        slow = slow-&gt;<span class="keyword">next</span>;
+        fast = fast-&gt;<span class="keyword">next</span>-&gt;<span class="keyword">next</span>;
+    }
+    
+    //<span class="keyword">split</span>
+    prev-&gt;<span class="keyword">next</span> = NULL;
+    
+    ListNode* left = sortList(head);
+    ListNode* right = sortList(slow);
+    
+    <span class="keyword">return</span> merge(left,right);
+}
+
+ListNode* merge(ListNode* left, ListNode* right){
+    ListNode* ret = NULL;
+    ListNode<span class="variable">**</span> pCur = &ret;
+    
+    <span class="keyword">while</span>(left && right){
+        <span class="keyword">if</span>(left-&gt;val &lt; right-&gt;val){
+            <span class="variable">*pCur</span> = left;
+            left = left-&gt;<span class="keyword">next</span>;
+        }
+        <span class="keyword">else</span>{
+            <span class="variable">*pCur</span> = right;
+            right = right-&gt;<span class="keyword">next</span>;
+        }
+        
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+    }
+    
+    <span class="keyword">while</span>(right){
+        <span class="variable">*pCur</span> = right;
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+        right = right-&gt;<span class="keyword">next</span>;
+    }
+    
+    <span class="keyword">while</span>(left){
+        <span class="variable">*pCur</span> = left;
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+        left = left-&gt;<span class="keyword">next</span>;
+    }
+    
+    <span class="variable">*pCur</span> = NULL;
+    
+    <span class="keyword">return</span> ret;
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-insertlist" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/insertlist/" class="article-date">
+  	<time datetime="2014-09-14T14:00:41.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/insertlist/">Insertion Sort List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sort a linked list using insertion sort.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>ListNode <span class="variable">*insertionSortList</span>(ListNode <span class="variable">*head</span>) {
+    ListNode* ret = NULL;
+    ListNode<span class="variable">**</span> pCur = &ret;
+    ListNode* temp = head, <span class="variable">*nxt</span> = NULL;
+    
+    <span class="keyword">while</span>(temp){
+        pCur = &ret;
+        <span class="keyword">while</span>(<span class="variable">*pCur</span> && (<span class="variable">*pCur</span>)-&gt;val &lt;= temp-&gt;val){
+            pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+        }
+        
+        nxt = temp-&gt;<span class="keyword">next</span>;
+        temp-&gt;<span class="keyword">next</span> = <span class="variable">*pCur</span>;
+        <span class="variable">*pCur</span> = temp;
+        temp = nxt;
+    }
+    
+    <span class="keyword">return</span> ret;
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-mergeklists" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/mergeklists/" class="article-date">
+  	<time datetime="2014-09-14T13:59:41.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/mergeklists/">Merge k Sorted Lists</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="code"><pre>ListNode *mergeKLists(<span class="stl_container"><span class="built_in">vector</span>&lt;ListNode* &gt;</span> &lists) { 
+    <span class="keyword">if</span>(lists.size() == <span class="number">0</span>) <span class="keyword">return</span> NULL;
+   
+    <span class="comment">//默认最大堆，队首是最大元素，重载的&lt;号，&gt;号编译不通过</span>
+    priority_queue&lt;ListNode*, <span class="stl_container"><span class="built_in">vector</span>&lt;ListNode*&gt;</span>, cmp&gt; que;
+	
+	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;lists.size(); i++){
+        <span class="keyword">if</span>(lists[i] != NULL) que.push(lists[i]);<span class="comment">//非空才加入</span>
+	}
+	
+	ListNode* ret = NULL;
+	ListNode** pCur = &ret;
+	
+	<span class="keyword">while</span>(!que.empty()){
+	    ListNode* p = que.top();
+	    *pCur = p;
+	    pCur = &((*pCur)-&gt;next);
+	    que.pop();
+	    
+	    <span class="keyword">if</span>(p-&gt;next != NULL) que.push(p-&gt;next);
+	}
+	
+	*pCur = NULL;
+	
+	<span class="keyword">return</span> ret;
+}
+
+<span class="keyword">struct</span> cmp{
+    <span class="keyword">bool</span> <span class="keyword">operator</span>() (ListNode* a, ListNode* b){<span class="comment">//反其道而行</span>
+        <span class="keyword">return</span> a-&gt;val &gt; b-&gt;val;<span class="comment">//这样变成最小堆</span>
+    }
+};
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-mergetwosortedlists" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/mergetwosortedlists/" class="article-date">
+  	<time datetime="2014-09-14T13:58:41.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/mergetwosortedlists/">Merge Two Sorted Lists</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre>ListNode <span class="variable">*mergeTwoLists</span>(ListNode <span class="variable">*l1</span>, ListNode <span class="variable">*l2</span>) {
+    ListNode* ret = NULL;
+    ListNode<span class="variable">**</span> pCur = &ret;
+    
+    <span class="keyword">while</span>(l1 && l2){
+        <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val){
+            <span class="variable">*pCur</span> = l1; 
+            l1 = l1-&gt;<span class="keyword">next</span>;
+        }
+        <span class="keyword">else</span>{
+            <span class="variable">*pCur</span> = l2;
+            l2 = l2-&gt;<span class="keyword">next</span>;
+        }
+        
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+    }
+    
+    <span class="keyword">while</span>(l1){
+        <span class="variable">*pCur</span> = l1;
+        l1 = l1-&gt;<span class="keyword">next</span>;
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+
+    }
+    
+    <span class="keyword">while</span>(l2){
+        <span class="variable">*pCur</span> = l2;
+        l2 = l2-&gt;<span class="keyword">next</span>;
+        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
+
+    }
+    
+    <span class="variable">*pCur</span> = NULL;
+    
+    <span class="keyword">return</span> ret;
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-mergeSortedArray" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/mergeSortedArray/" class="article-date">
+  	<time datetime="2014-09-14T13:57:30.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/mergeSortedArray/">Merge Sorted Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My Submissions<br>Given two sorted integer arrays A and B, merge B into A as one sorted array.</p>
+<p>Note:<br>You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are m and n respectively.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre>void merge(<span class="built_in">int</span> A[], <span class="built_in">int</span> m, <span class="built_in">int</span> B[], <span class="built_in">int</span> n) {
+    <span class="built_in">int</span> <span class="built_in">len</span> = m+n-<span class="number">1</span>;
+    <span class="built_in">int</span> ia = m-<span class="number">1</span>, ib = n-<span class="number">1</span>;
+    
+    <span class="keyword">while</span>(ia &gt;=<span class="number">0</span> && ib &gt;= <span class="number">0</span>){
+        A[<span class="built_in">len</span>--] = A[ia] &gt; B[ib] ? A[ia--] : B[ib--];
+    }
+    
+    <span class="keyword">while</span>(ib &gt;= <span class="number">0</span>) A[<span class="built_in">len</span>--] = B[ib--];
+}
+</pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-validParentese" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/14/validParentese/" class="article-date">
+  	<time datetime="2014-09-14T13:54:51.000Z" itemprop="datePublished">9月 14 2014</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈和队列/">栈和队列</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/14/validParentese/">Valid Parentheses</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.</p>
+<p>The brackets must close in the correct order, “()” and “()[]{}” are all valid but “(]” and “([)]” are not.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="keyword">bool</span> isValid(<span class="built_in">string</span> s) {
+    <span class="stl_container"><span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt;</span>st;
+    
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.size(); i++){
+        <span class="keyword">if</span>(s[i] == <span class="string">'('</span> || s[i] == <span class="string">'['</span> || s[i] == <span class="string">'{'</span>){
+            st.push(s[i]);
+        }
+        <span class="keyword">else</span>{
+            <span class="keyword">if</span>(st.empty()) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">// )(()</span>
+            <span class="keyword">else</span>{
+                <span class="keyword">char</span> c = st.top();
+                st.pop();
+                <span class="keyword">if</span>((c == <span class="string">'{'</span> && s[i] != <span class="string">'}'</span>) || (c == <span class="string">'['</span> && s[i] != <span class="string">']'</span>) 
+                    || (c == <span class="string">'('</span> && s[i] != <span class="string">')'</span>))
+                    <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        }
+    }
+    
+    <span class="keyword">return</span> st.empty();
+   
+}
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-inOrder" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -285,101 +1069,10 @@
 
 
   
-    <article id="post-postOrder" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2014/09/12/postOrder/" class="article-date">
-  	<time datetime="2014-09-12T11:06:24.000Z" itemprop="datePublished">9月 12 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/12/postOrder/">Binary Tree Postorder Traversal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
-<p>For example:<br>Given binary tree {1,#,2,3}, return [3,2,1].</p>
-<p>Note: Recursive solution is trivial, could you do it iteratively?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="code"><pre><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> postorderTraversal(TreeNode *root) {
-    <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>res;
-    TreeNode* p = root;
-    <span class="keyword">if</span>(root == NULL) <span class="keyword">return</span> res; 
-
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span> st;
-    <span class="stl_container"><span class="built_in">stack</span>&lt;TreeNode*&gt;</span>output;
-    st.push(p); 
-
-    <span class="keyword">while</span>(!st.empty()){
-        p = st.top();
-        st.pop();
-        output.push(p);
-        <span class="keyword">if</span>(p-&gt;left != NULL) st.push(p-&gt;left);
-        <span class="keyword">if</span>(p-&gt;right != NULL) st.push(p-&gt;right);
-    }
-    
-    <span class="keyword">while</span>(!output.empty()){
-        res.push_back(output.top()-&gt;val);
-        output.pop();
-    }
-    
-    <span class="keyword">return</span> res;
-}
-</pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
       <footer id="footer">
