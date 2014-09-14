@@ -3,20 +3,77 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Sort Colors | 码农求职记</title>
+  <title>Construct Binary Tree from Preorder and Inorder Traversal | 码农求职记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
-Here, we will use the integers 0,">
+  <meta name="description" content="Given preorder and inorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+TreeNode* generate">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sort Colors">
-<meta property="og:url" content="http://yoursite.com/2014/09/14/sortcol/">
+<meta property="og:title" content="Construct Binary Tree from Preorder and Inorder Traversal">
+<meta property="og:url" content="http://yoursite.com/2014/09/14/constructPI/">
 <meta property="og:site_name" content="码农求职记">
-<meta property="og:description" content="Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
-Here, we will use the integers 0,">
+<meta property="og:description" content="Given preorder and inorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+TreeNode* generate">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sort Colors">
-<meta name="twitter:description" content="Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
-Here, we will use the integers 0,">
+<meta name="twitter:title" content="Construct Binary Tree from Preorder and Inorder Traversal">
+<meta name="twitter:description" content="Given preorder and inorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+TreeNode* generate">
   
     <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
   
@@ -121,15 +178,15 @@ Here, we will use the integers 0,">
 		</header>				
 	</div>
 </nav>
-      <article id="post-sortcol" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-constructPI" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/09/14/sortcol/" class="article-date">
-  	<time datetime="2014-09-14T14:03:23.000Z" itemprop="datePublished">9月 14 2014</time>
+      <a href="/2014/09/14/constructPI/" class="article-date">
+  	<time datetime="2014-09-14T14:14:02.000Z" itemprop="datePublished">9月 14 2014</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
 
     </div>
   
@@ -139,7 +196,7 @@ Here, we will use the integers 0,">
         
   
     <h1 class="article-title" itemprop="name">
-      Sort Colors
+      Construct Binary Tree from Preorder and Inorder Traversal
     </h1>
   
 
@@ -147,12 +204,8 @@ Here, we will use the integers 0,">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
-<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
-<p>Note:<br>You are not suppose to use the library’s sort function for this problem.</p>
-<p>click to show follow up.</p>
-<p>Follow up:<br>A rather straight forward solution is a two-pass algorithm using counting sort.<br>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</p>
-<p>Could you come up with an one-pass algorithm using only constant space?</p>
+        <p>Given preorder and inorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assume that duplicates do not exist in the tree.</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -164,16 +217,30 @@ Here, we will use the integers 0,">
 9
 10
 11
-</pre></td><td class="code"><pre><span class="keyword">void</span> sortColors(<span class="keyword">int</span> A[], <span class="keyword">int</span> n) {
-    <span class="keyword">int</span> <span class="keyword">count</span>[<span class="number">3</span>] = {<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>};
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre>TreeNode* generateTree(<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>& preorder, <span class="keyword">int</span> pl, <span class="keyword">int</span> pr, <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>& inOrder, <span class="keyword">int</span> il, <span class="keyword">int</span> ir){
+    <span class="keyword">if</span>(pl&gt;pr) <span class="keyword">return</span> NULL;<span class="comment">//&gt; not &gt;=</span>
     
-    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) <span class="keyword">count</span>[A[i]]++;
+    TreeNode* tmp = <span class="keyword">new</span> TreeNode(preorder[pl]);
+    <span class="keyword">int</span> mid = il;
+    <span class="keyword">while</span>(inOrder[mid] != preorder[pl]) mid++;<span class="comment">//分两半</span>
+    <span class="keyword">int</span> len = mid - il;
     
-    <span class="keyword">int</span> <span class="keyword">index</span> = <span class="number">0</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++){
-        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="keyword">count</span>[i]; j++)
-            A[<span class="keyword">index</span>++] = i;
-    }
+    tmp-&gt;left = generateTree(preorder,pl+<span class="number">1</span>,pl+len,inOrder,il,mid-<span class="number">1</span>);
+    tmp-&gt;right = generateTree(preorder,pl+len+<span class="number">1</span>,pr,inOrder,mid+<span class="number">1</span>,ir);
+    
+}
+    
+TreeNode *buildTree(<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> &preorder, <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> &inorder) {
+    <span class="keyword">if</span>(preorder.size() == <span class="number">0</span>) <span class="keyword">return</span> NULL;
+    <span class="keyword">int</span> n = preorder.size()-<span class="number">1</span>;
+    <span class="keyword">return</span> generateTree(preorder,<span class="number">0</span>,n,inorder,<span class="number">0</span>,n);
 }
 </pre></td></tr></table></figure>
       
@@ -187,18 +254,18 @@ Here, we will use the integers 0,">
     
 <nav id="article-nav">
   
-    <a href="/2014/09/14/construct/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/14/uniqueBinary/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Construct Binary Tree from Inorder and Postorder Traversal
+          Unique Binary Search Trees
         
       </div>
     </a>
   
   
-    <a href="/2014/09/14/firstmissingpositive/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">First Missing Positive</div>
+    <a href="/2014/09/14/construct/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Construct Binary Tree from Inorder and Postorder Traversal</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -227,7 +294,7 @@ Here, we will use the integers 0,">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="sortcol" data-title="Sort Colors" data-url="http://yoursite.com/2014/09/14/sortcol/"></div>
+	<div class="ds-thread" data-thread-key="constructPI" data-title="Construct Binary Tree from Preorder and Inorder Traversal" data-url="http://yoursite.com/2014/09/14/constructPI/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
