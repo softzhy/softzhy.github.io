@@ -115,7 +115,23 @@ Populate each next pointer to point to ">
   TreeLinkNode <span class="variable">*right</span>;
   TreeLinkNode <span class="variable">*next</span>;
 }
-</pre></figure><br>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.<br><br>Initially, all next pointers are set to NULL.<br><br>Note:<br><br>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL<br><br><figure class="highlight"><pre><span class="literal">void</span> connect(TreeLinkNode <span class="subst">*</span>root) {
+</pre></figure><br>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.<br><br>Initially, all next pointers are set to NULL.<br><br>Note:<br><br>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br><br><figure class="highlight"><pre>1
+       /  <span class="command">\
+</span>      2    3
+     / <span class="command">\ </span> / <span class="command">\
+</span>    4  5  6  7
+</pre></figure>
+
+<p>After calling your function, the tree should look like:</p>
+<figure class="highlight"><pre><span class="number">1</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+       <span class="subst">/</span>  <span class="subst">\</span>
+      <span class="number">2</span> <span class="subst">-&gt; </span><span class="number">3</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+     <span class="subst">/</span> <span class="subst">\</span>  <span class="subst">/</span> <span class="subst">\</span>
+    <span class="number">4</span><span class="subst">-&gt;</span><span class="number">5</span><span class="subst">-&gt;</span><span class="number">6</span><span class="subst">-&gt;</span><span class="number">7</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+</pre></figure>
+
+
+<figure class="highlight"><pre><span class="literal">void</span> connect(TreeLinkNode <span class="subst">*</span>root) {
     <span class="keyword">while</span>(root){
         TreeLinkNode<span class="subst">*</span> prev <span class="subst">=</span> <span class="built_in">NULL</span>;<span class="comment">//previous node of the same level</span>
         TreeLinkNode<span class="subst">*</span> nxt <span class="subst">=</span> <span class="built_in">NULL</span>;<span class="comment">//first node of next level</span>
@@ -137,7 +153,8 @@ Populate each next pointer to point to ">
         root <span class="subst">=</span> nxt;
     }
 }
-</pre></figure>	  
+</pre></figure>
+	  
 	</div>
 
 	<div>
@@ -145,9 +162,9 @@ Populate each next pointer to point to ">
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2014/11/18/test/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
@@ -187,6 +204,17 @@ Populate each next pointer to point to ">
 
 	<!-- categories -->
     
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Tree/">Tree<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
 
 	<!-- tags -->
 	
@@ -194,7 +222,7 @@ Populate each next pointer to point to ">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/二叉树/">二叉树<span>15</span></a></li>
+  <li><a href="/tags/Tree/">Tree<span>2</span></a></li> <li><a href="/tags/Depth-first-Search/">Depth-first Search<span>2</span></a></li>
     </ul>
 	</div>
 		
