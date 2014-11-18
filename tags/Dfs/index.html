@@ -3,16 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Convert Sorted Array to Binary Search Tree | 码农求职记</title>
+  <title>Dfs | 码农求职记</title>
   <meta name="author" content="Zhang Yong">
-  
-  <meta name="description" content="Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
-TreeNode *sortedArrayToBST(vector&amp;lt;int&amp;gt; &amp;num) {">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Convert Sorted Array to Binary Search Tree"/>
+  
   <meta property="og:site_name" content="码农求职记"/>
 
   
@@ -85,115 +82,146 @@ TreeNode *sortedArrayToBST(vector&amp;lt;int&amp;gt; &amp;num) {">
   	<div class="content">
     	 
 
+<!-- title -->
+<div class="page-header">
+  <h1 class="archive-title-tag">Dfs</h1>
+</div>
 
-	
-		<div class="page-header">		
-			<h1> Convert Sorted Array to Binary Search Tree</h1>
-		</div>		
-	
-
-
-
-<div class="row post">
-	<!-- cols -->
-	
-	<div class="col-md-9">
+<div class="row page">
+  <!-- cols -->
+  
+  <div class="col-md-9">
 	
 
-			
-
-	<!-- content -->
-	<div class="mypage">		
-	    <p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
-<figure class="highlight"><pre>TreeNode *sortedArrayToBST(<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> &num) {
-    <span class="keyword">if</span>(num.size() == <span class="number">0</span>) <span class="keyword">return</span> NULL;
-    <span class="keyword">return</span> sortedArrayToBST(num,<span class="number">0</span>,num.size()-<span class="number">1</span>);
-}
-
-TreeNode* sortedArrayToBST(<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>& num, <span class="keyword">int</span> l, <span class="keyword">int</span> r){
-    <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> NULL;
-    
-    <span class="keyword">int</span> mid = l+(r-l)/<span class="number">2</span>;
-    TreeNode* root = <span class="keyword">new</span> TreeNode(num[mid]);
-    root-&gt;left = sortedArrayToBST(num,l,mid-<span class="number">1</span>);
-    root-&gt;right = sortedArrayToBST(num,mid+<span class="number">1</span>,r);
-    
-    <span class="keyword">return</span> root;
-}`
-</pre></figure>	  
-	</div>
-
-	<div>
-  	<center>
-	<div class="pagination">
-<ul class="pagination">
-	 
+	  
+	  <!-- display as list -->
+	  <div class="archive">
 				
-    	<li class="prev"><a href="/2014/09/14/convert2/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
-
-        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
-
 		
-		   <li class="next"><a href="/2014/09/14/validBST/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
-        
-	
+		
+			
+			
+			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
+			<ul id="2014" class="collapse in">
+			
+		
+<li class="listing-item">
+  <span class="date_class"> 2014-09-14 </span> &raquo;
+  
+  <span class="title"><a href="/2014/09/14/unique2/" >Unique Binary Search Trees II</a></span>
+  
+</li>			
+		
+		
+		
+<li class="listing-item">
+  <span class="date_class"> 2014-09-14 </span> &raquo;
+  
+  <span class="title"><a href="/2014/09/14/construct/" >Construct Binary Tree from Inorder and Postorder Traversal</a></span>
+  
+</li>			
+
 </ul>
 </div>
 
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-  <h2 class="title">Comments</h2>
 
-  
-  	 <div class="ds-thread" data-title="Convert Sorted Array to Binary Search Tree"></div>  
-  
-</section>
+</div> <!-- col-md-9/col-md-12 -->
 
-	
-	</div> <!-- col-md-9/col-md-12 -->
-	
-	
-		<div class="col-md-3"> 
 
-	<!-- date -->
+<div class="col-md-3">
+	<div id="sidebar">
 	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	9月 14 2014 
-	</div>
-	
+			<div class="form-group has-success has-feedback">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+    <input type="hidden" name="q" value="site:yoursite.com">	
+  </form>
+</div>
 
-	<!-- categories -->
-    
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/二叉树/">二叉树<span>7</span></a></li>
-    </ul>
-	</div>
 		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Tree/">Tree<span>9</span></a></li>
+		
+		</ul>
 	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
 
-	
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Tree/">Tree<span>9</span></a></li>
+		
+			<li><a href="/tags/Dp/">Dp<span>1</span></a></li>
+		
+			<li><a href="/tags/排序/">排序<span>7</span></a></li>
+		
+			<li><a href="/tags/Depth-first-Search/">Depth-first Search<span>3</span></a></li>
+		
+			<li><a href="/tags/二叉树/">二叉树<span>7</span></a></li>
+		
+			<li><a href="/tags/Dfs/">Dfs<span>2</span></a></li>
+		
+			<li><a href="/tags/栈和队列/">栈和队列<span>1</span></a></li>
+		
+		 
+		</ul>
+	</div>
 
-</div><!-- row -->
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/09/14/populateNode/" ><i class="fa fa-file-o"></i>Populating Next Right Point...</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/maxpathsum/" ><i class="fa fa-file-o"></i>Binary Tree Maximum Path Sum</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/pathsum2/" ><i class="fa fa-file-o"></i>Path Sum II</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/pathSum1/" ><i class="fa fa-file-o"></i>Path Sum</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/maximum/" ><i class="fa fa-file-o"></i>Maximum Depth of Binary Tree</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/softzhy" title="My Github account." target="_blank"]);">My Github</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+
+
+
 
 	</div>
   </div>
