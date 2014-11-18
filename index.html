@@ -103,6 +103,37 @@
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2014/11/18/text/" title="just kidding.">text</a>
+			<span class="date"> 11月 18 2014 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <h2 id="我永远爱你">我永远爱你</h2>
+<p>kjkkjkjkj<br>！</p>
+<p>kkkjidjfki<br>knjkjkdf<br>kj</p>
+<h2 id="dkdjfkj">dkdjfkj</h2>
+<p>kjdkfjk</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2014/11/18/text/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2014/11/18/test/" title="Introduce tag plugins in freemind.">test</a>
 			<span class="date"> 11月 18 2014 </span>
 		</h3>
@@ -561,48 +592,6 @@ TreeNode* sortedArrayToBST(<span class="stl_container"><span class="built_in">ve
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2014/09/14/validBST/" >Validate Binary Search Tree</a>
-			<span class="date"> 9月 14 2014 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
-<p>Assume a BST is defined as follows:</p>
-<p>The left subtree of a node contains only nodes with keys less than the node’s key.<br>The right subtree of a node contains only nodes with keys greater than the node’s key.<br>Both the left and right subtrees must also be binary search trees.<br>confused what “{1,#,2,3}” means? &gt; read more on how binary tree is serialized on OJ.</p>
-<figure class="highlight"><pre>bool isValidBST(TreeNode<span class="subst">*</span> root, int lower, int upper){
-    <span class="keyword">if</span>(root <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;
-    
-    <span class="keyword">return</span> root<span class="subst">-&gt;</span>val <span class="subst">&lt;</span> upper <span class="subst">&&</span> root<span class="subst">-&gt;</span>val <span class="subst">&gt;</span> lower
-         <span class="subst">&</span> isValidBST(root<span class="subst">-&gt;</span>left,lower,root<span class="subst">-&gt;</span>val)
-         <span class="subst">&</span> isValidBST(root<span class="subst">-&gt;</span>right,root<span class="subst">-&gt;</span>val,upper);
-}
-
-bool isValidBST(TreeNode <span class="subst">*</span>root) {
-   <span class="keyword">return</span> isValidBST(root,INT_MIN,INT_MAX);     
-}
-</pre></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2014/09/14/validBST/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
 
 		</div>
 
@@ -651,6 +640,8 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
 		
 			<li><a href="/categories/Docs/">Docs<span>1</span></a></li>
 		
+			<li><a href="/categories/kidding/">kidding<span>1</span></a></li>
+		
 		</ul>
 	</div>
 
@@ -660,11 +651,13 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/栈和队列/">栈和队列<span>1</span></a></li>
+		
+			<li><a href="/tags/kid/">kid<span>1</span></a></li>
+		
 			<li><a href="/tags/二叉树/">二叉树<span>16</span></a></li>
 		
 			<li><a href="/tags/test/">test<span>1</span></a></li>
-		
-			<li><a href="/tags/栈和队列/">栈和队列<span>1</span></a></li>
 		
 			<li><a href="/tags/排序/">排序<span>7</span></a></li>
 		
@@ -680,6 +673,10 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2014/11/18/text/"  title="just kidding." ><i class="fa fa-file-o"></i>text</a>
+      </li>
+    
+      <li>
         <a href="/2014/11/18/test/"  title="Introduce tag plugins in freemind." ><i class="fa fa-file-o"></i>test</a>
       </li>
     
@@ -693,10 +690,6 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
     
       <li>
         <a href="/2014/09/14/pathsum2/" ><i class="fa fa-file-o"></i>Path Sum II</a>
-      </li>
-    
-      <li>
-        <a href="/2014/09/14/pathSum1/" ><i class="fa fa-file-o"></i>Path Sum</a>
       </li>
     
   </ul>
