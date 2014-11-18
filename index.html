@@ -1,152 +1,121 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>码农求职记</title>
+  <meta name="author" content="Zhang Yong">
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农求职记">
-<meta property="og:url" content="http://yoursite.com/">
-<meta property="og:site_name" content="码农求职记">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农求职记">
-<meta name="twitter:description">
+
   
-    <link rel="alternative" href="/atom.xml" title="码农求职记" type="application/atom+xml">
+  <meta property="og:site_name" content="码农求职记"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
   
   
-    <link rel="icon" href="/favicon.png">
+    <link href="/favicon.png" rel="icon">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
 </head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<div class="profilepic">
-			<img src="/img/me.jpeg">
-		</div>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Zhang Yong</a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">Make things as simple as possible, but not simpler</p>
-		
-		<nav class="header-menu">
-			<ul>
-			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/archives">所有文章</a></li>
-	        
-				<li><a href="/tags/随笔">随笔</a></li>
-	        
-				<li><a href="/tags/二叉树">二叉树</a></li>
-	        
-				<li><a href="/tags/栈和队列">栈和队列</a></li>
-	        
-				<li><a href="/tags/排序">排序</a></li>
-	        
-			</ul>
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="/#" title="github">github</a>
-		        
-					<a class="weibo" target="_blank" href="http://weibo.com/u/2868793152" title="weibo">weibo</a>
-		        
-					<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-		        
-			</div>
-		</nav>
-	</header>				
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay"></div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img src="/img/me.jpeg">
-			</div>
-
-			<hgroup>
-			  <h1 class="header-author"><a href="/">Zhang Yong</a></h1>
-			</hgroup>
-			
-			<p class="header-subtitle">Make things as simple as possible, but not simpler</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-					<li><a href="/tags/二叉树">二叉树</a></li>
-		        
-					<li><a href="/tags/栈和队列">栈和队列</a></li>
-		        
-					<li><a href="/tags/排序">排序</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="/#" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/u/2868793152" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">码农求职记</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
 </nav>
-      
-  
-    <article id="post-populateNode" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/populateNode/" class="article-date">
-  	<time datetime="2014-09-14T14:33:12.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
+<div class="clearfix"></div>
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/populateNode/">Populating Next Right Pointers in Each Node</a>
-    </h1>
-  
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header">
+  <h1>Make things as simple as possible, but not simpler</h1>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree</p>
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      Make things as simple as possible, but not simpler.
+</div>    
+
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/populateNode/" >Populating Next Right Pointers in Each Node</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree</p>
 <figure class="highlight"><pre>struct TreeLinkNode {
   TreeLinkNode <span class="variable">*left</span>;
   TreeLinkNode <span class="variable">*right</span>;
@@ -175,49 +144,32 @@
     }
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/populateNode/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/maxpathsum/" >Binary Tree Maximum Path Sum</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-maxpathsum" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/maxpathsum/" class="article-date">
-  	<time datetime="2014-09-14T14:31:57.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/maxpathsum/">Binary Tree Maximum Path Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, find the maximum path sum.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree, find the maximum path sum.</p>
 <p>The path may start and end at any node in the tree.</p>
 <p>For example:<br>Given the below binary tree,</p>
 <p>[1,2,3]</p>
@@ -247,49 +199,32 @@ int maxPathSum(TreeNode <span class="subst">*</span>root) {
 }
 </pre></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/maxpathsum/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/pathsum2/" >Path Sum II</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-pathsum2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/pathsum2/" class="article-date">
-  	<time datetime="2014-09-14T14:30:19.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/pathsum2/">Path Sum II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree and a sum, find all root-to-leaf paths where each path’s sum equals the given sum.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree and a sum, find all root-to-leaf paths where each path’s sum equals the given sum.</p>
 <p>For example:<br>Given the below binary tree and sum = 22,</p>
 <p>[5,4,8,11,#,13,4,7,2,5,1]</p>
 <p>return<br>[<br>   [5,4,11,2],<br>   [5,8,4,5]<br>]</p>
@@ -316,49 +251,32 @@ int maxPathSum(TreeNode <span class="subst">*</span>root) {
     tmp.pop_back();
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/pathsum2/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/pathSum1/" >Path Sum</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-pathSum1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/pathSum1/" class="article-date">
-  	<time datetime="2014-09-14T14:28:19.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/pathSum1/">Path Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p>
 <p>For example:<br>Given the below binary tree and sum = 22,</p>
 <p>[5,4,8,11,#,13,4,7,2,#,#,#,1]</p>
 <p>return true, as there exist a root-to-leaf path 5-&gt;4-&gt;11-&gt;2 which sum is 22</p>
@@ -370,49 +288,32 @@ int maxPathSum(TreeNode <span class="subst">*</span>root) {
     <span class="keyword">return</span> hasPathSum(root<span class="subst">-&gt;</span>left,<span class="keyword">sum</span><span class="attribute">-root</span><span class="subst">-&gt;</span>val) <span class="subst">||</span> hasPathSum(root<span class="subst">-&gt;</span>right,<span class="keyword">sum</span><span class="attribute">-root</span><span class="subst">-&gt;</span>val);
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/pathSum1/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/maximum/" >Maximum Depth of Binary Tree</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-maximum" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/maximum/" class="article-date">
-  	<time datetime="2014-09-14T14:27:19.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/maximum/">Maximum Depth of Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, find its maximum depth.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree, find its maximum depth.</p>
 <p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
 <figure class="highlight"><pre><span class="comment">//Approach 1: </span>
 <span class="keyword">int</span> maxDepth(TreeNode* root){
@@ -447,49 +348,32 @@ int maxPathSum(TreeNode <span class="subst">*</span>root) {
     <span class="keyword">return</span> maxHeight;
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/maximum/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/minimumdepth/" >Minimum Depth of Binary Tree</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-minimumdepth" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/minimumdepth/" class="article-date">
-  	<time datetime="2014-09-14T14:26:28.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/minimumdepth/">Minimum Depth of Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, find its minimum depth.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree, find its minimum depth.</p>
 <p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
 <figure class="highlight"><pre><span class="comment">//递归需要怎么做，你好好想想</span>
 <span class="keyword">int</span> minDepth(TreeNode *root) {
@@ -518,49 +402,32 @@ int maxPathSum(TreeNode <span class="subst">*</span>root) {
    <span class="keyword">return</span> cnt;
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/minimumdepth/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/convert2/" >Convert Sorted List to Binary Search Tree</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-convert2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/convert2/" class="article-date">
-  	<time datetime="2014-09-14T14:25:36.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/convert2/">Convert Sorted List to Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <figure class="highlight"><pre>TreeNode <span class="subst">*</span>sortedListToBST(ListNode <span class="subst">*</span>head) {
    <span class="keyword">if</span>(head <span class="subst">==</span> <span class="built_in">NULL</span>) <span class="keyword">return</span> <span class="built_in">NULL</span>;
    int n <span class="subst">=</span> getListLen(head);
@@ -608,49 +475,32 @@ int getListLen(ListNode<span class="subst">*</span> head){
     <span class="keyword">return</span> len;
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/convert2/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/convert1/" >Convert Sorted Array to Binary Search Tree</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-convert1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/convert1/" class="article-date">
-  	<time datetime="2014-09-14T14:24:44.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/convert1/">Convert Sorted Array to Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <figure class="highlight"><pre>TreeNode *sortedArrayToBST(<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> &num) {
     <span class="keyword">if</span>(num.size() == <span class="number">0</span>) <span class="keyword">return</span> NULL;
     <span class="keyword">return</span> sortedArrayToBST(num,<span class="number">0</span>,num.size()-<span class="number">1</span>);
@@ -667,49 +517,32 @@ TreeNode* sortedArrayToBST(<span class="stl_container"><span class="built_in">ve
     <span class="keyword">return</span> root;
 }`
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/convert1/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/validBST/" >Validate Binary Search Tree</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-validBST" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/validBST/" class="article-date">
-  	<time datetime="2014-09-14T14:23:38.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/validBST/">Validate Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
 <p>Assume a BST is defined as follows:</p>
 <p>The left subtree of a node contains only nodes with keys less than the node’s key.<br>The right subtree of a node contains only nodes with keys greater than the node’s key.<br>Both the left and right subtrees must also be binary search trees.<br>confused what “{1,#,2,3}” means? &gt; read more on how binary tree is serialized on OJ.</p>
 <figure class="highlight"><pre>bool isValidBST(TreeNode<span class="subst">*</span> root, int lower, int upper){
@@ -726,49 +559,32 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
 </pre></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/validBST/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
+			<a href="/2014/09/14/unique2/" >Unique Binary Search Trees II</a>
+			<span class="date"> 9月 14 2014 </span>
+		</h3>
+	
 
 
-
-
-
-
+			<div class="entry">
+  <div class="row">
   
-    <article id="post-unique2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/09/14/unique2/" class="article-date">
-  	<time datetime="2014-09-14T14:21:17.000Z" itemprop="datePublished">9月 14 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/14/unique2/">Unique Binary Search Trees II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
+	<div class="col-md-12">
+	  
+	
+	  <p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
 <p>For example,<br>Given n = 3, your program should return all 5 unique BST’s shown below.</p>
 <p>[1,#,3,2], [3,2,#,1], [3,1,#,#,2], [2,1,3], [1,#,2,#,3]</p>
 <p>confused what “{1,#,2,3}” means? &gt; read more on how binary tree is serialized on OJ.</p>
@@ -801,45 +617,155 @@ bool isValidBST(TreeNode <span class="subst">*</span>root) {
     <span class="keyword">return</span> res;
 }
 </pre></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
+	
+	</div>
+	
   
-</article>
+</div>
+	<a type="button" href="/2014/09/14/unique2/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			<div class="form-group has-success has-feedback">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+    <input type="hidden" name="q" value="site:yoursite.com">	
+  </form>
+</div>
+
+		
+			
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/二叉树/">二叉树<span>16</span></a></li>
+		
+			<li><a href="/tags/栈和队列/">栈和队列<span>1</span></a></li>
+		
+			<li><a href="/tags/排序/">排序<span>7</span></a></li>
+		
+		 
+		</ul>
+	</div>
 
 
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2014 Zhang Yong
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+      <li>
+        <a href="/2014/09/14/populateNode/" ><i class="fa fa-file-o"></i>Populating Next Right Point...</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/maxpathsum/" ><i class="fa fa-file-o"></i>Binary Tree Maximum Path Sum</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/pathsum2/" ><i class="fa fa-file-o"></i>Path Sum II</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/pathSum1/" ><i class="fa fa-file-o"></i>Path Sum</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/maximum/" ><i class="fa fa-file-o"></i>Maximum Depth of Binary Tree</a>
+      </li>
+    
+  </ul>
+</div>
 
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/wzpan" title="My Github account." target="_blank"]);">My Github</a></li>
+	
+		<li><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/pub/weizhou-pan/5b/8a0/161" title="My Linkin account." target="_blank"]);">My LinkedIn</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
   </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2014 Zhang Yong
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
 </body>
-</html>
+   </html>
