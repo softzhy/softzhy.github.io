@@ -103,107 +103,6 @@
 	
 	<!-- display as entry -->
 		<h3 class="title">
-			<a href="/2014/09/14/mergetwosortedlists/" >Merge Two Sorted Lists</a>
-			<span class="date"> 9月 14 2014 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
-<figure class="highlight"><pre>ListNode <span class="variable">*mergeTwoLists</span>(ListNode <span class="variable">*l1</span>, ListNode <span class="variable">*l2</span>) {
-    ListNode* ret = NULL;
-    ListNode<span class="variable">**</span> pCur = &ret;
-    
-    <span class="keyword">while</span>(l1 && l2){
-        <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val){
-            <span class="variable">*pCur</span> = l1; 
-            l1 = l1-&gt;<span class="keyword">next</span>;
-        }
-        <span class="keyword">else</span>{
-            <span class="variable">*pCur</span> = l2;
-            l2 = l2-&gt;<span class="keyword">next</span>;
-        }
-        
-        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
-    }
-    
-    <span class="keyword">while</span>(l1){
-        <span class="variable">*pCur</span> = l1;
-        l1 = l1-&gt;<span class="keyword">next</span>;
-        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
-
-    }
-    
-    <span class="keyword">while</span>(l2){
-        <span class="variable">*pCur</span> = l2;
-        l2 = l2-&gt;<span class="keyword">next</span>;
-        pCur = &((<span class="variable">*pCur</span>)-&gt;<span class="keyword">next</span>);
-
-    }
-    
-    <span class="variable">*pCur</span> = NULL;
-    
-    <span class="keyword">return</span> ret;
-}
-</pre></figure>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2014/09/14/mergetwosortedlists/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2014/09/14/mergeSortedArray/" >Merge Sorted Array</a>
-			<span class="date"> 9月 14 2014 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Merge Sorted Array Total Accepted: 22608 Total Submissions: 70282 My Submissions<br>Given two sorted integer arrays A and B, merge B into A as one sorted array.</p>
-<p>Note:<br>You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are m and n respectively.</p>
-<figure class="highlight"><pre>void merge(<span class="built_in">int</span> A[], <span class="built_in">int</span> m, <span class="built_in">int</span> B[], <span class="built_in">int</span> n) {
-    <span class="built_in">int</span> <span class="built_in">len</span> = m+n-<span class="number">1</span>;
-    <span class="built_in">int</span> ia = m-<span class="number">1</span>, ib = n-<span class="number">1</span>;
-    
-    <span class="keyword">while</span>(ia &gt;=<span class="number">0</span> && ib &gt;= <span class="number">0</span>){
-        A[<span class="built_in">len</span>--] = A[ia] &gt; B[ib] ? A[ia--] : B[ib--];
-    }
-    
-    <span class="keyword">while</span>(ib &gt;= <span class="number">0</span>) A[<span class="built_in">len</span>--] = B[ib--];
-}
-</pre></figure>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2014/09/14/mergeSortedArray/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
 			<a href="/2014/09/14/validParentese/" >Valid Parentheses</a>
 			<span class="date"> 9月 14 2014 </span>
 		</h3>
@@ -440,32 +339,17 @@
 
 		
 			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Docs/">Docs<span>1</span></a></li>
-		
-			<li><a href="/categories/kidding/">kidding<span>1</span></a></li>
-		
-		</ul>
-	</div>
-
 		
 			
 	<div class="widget">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/排序/">排序<span>7</span></a></li>
+		
 			<li><a href="/tags/二叉树/">二叉树<span>16</span></a></li>
 		
 			<li><a href="/tags/栈和队列/">栈和队列<span>1</span></a></li>
-		
-			<li><a href="/tags/test/">test<span>1</span></a></li>
-		
-			<li><a href="/tags/排序/">排序<span>7</span></a></li>
-		
-			<li><a href="/tags/kid/">kid<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -479,14 +363,6 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2014/11/18/text/"  title="just kidding." ><i class="fa fa-file-o"></i>text</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/18/test/"  title="Introduce tag plugins in freemind." ><i class="fa fa-file-o"></i>test</a>
-      </li>
-    
-      <li>
         <a href="/2014/09/14/populateNode/" ><i class="fa fa-file-o"></i>Populating Next Right Point...</a>
       </li>
     
@@ -496,6 +372,14 @@
     
       <li>
         <a href="/2014/09/14/pathsum2/" ><i class="fa fa-file-o"></i>Path Sum II</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/pathSum1/" ><i class="fa fa-file-o"></i>Path Sum</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/14/maximum/" ><i class="fa fa-file-o"></i>Maximum Depth of Binary Tree</a>
       </li>
     
   </ul>
